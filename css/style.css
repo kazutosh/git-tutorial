@@ -1,0 +1,17 @@
+.section:not(:first-child) {
+    margin-top: 100px;
+}
+
+.command {
+    font-size: 22px;
+    font-style: bold;
+}
+
+.image {
+    width: 50%;
+    box-shadow: 0 0 0 2px black;
+}
+
+.annotation {
+    color: red;
+}

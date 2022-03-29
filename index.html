@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>GitHubとgitの使い方</title>
+    </head>
+    <body>
+        <div class="main">
+            <section class="section">
+                <h1>gitのインストール</h1>
+                <p>このURLからgitをダウンロードをする</p>
+                <a href="https://git-scm.com/downloads" target="_blank">Git - Downloads</a>
+                <p>[Windows]を選んで、</p>
+                <img class="image" src="./img/install_git_1.png" ></img>
+                <p>[64-bit Git for Windows Setup.]を選ぶ<p>
+                <img class="image" src="./img/install_git_2.png"></img>
+                <p>ダウンロードが終わったら、インストーラを開き、画面の手順にそって進み、インストールを終わらせる</p>
+                <p>そして、コマンドプロンプトから<p class="command">git --version</p>と打ち、Enterを押して、以下の画像のような文字が出てくることを確認する</p>
+                <img class="image" src="./img/install_git_4.png"></img>
+            </section>
+            <section class="section">
+                <h1>gitの初回設定</h1>
+                <p>まず、コマンドプロンプトを開く</p>
+                <p>そして、以下のコマンドでユーザ情報を設定する</p>
+                <p class="command">git config --global user.name "自分のGitHubの名前"</p>
+                <p class="command">git config --global user.email "自分のGitHubのEメールアドレス"</p>
+                <p>次は、GitHubアクセス時に、毎度毎度パスワードを入力しなくてもいいように、Windows側で管理してくれるように設定する</p>
+                <p class="command">git config --global credential.helper wincred</p>
+                <p>終わったら、GitHubのWEBサイトに飛ぶ</p>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <p>GitHubにログインし、[Settings]を開く</p>
+                <p>そして、左のタブの一番下の[Developer settings]を開き、[Personal access tokens]→[Generate new token]を押す</p>
+                <img class="image" src="./img/setting_git_1.png"></img>
+                <img class="image" src="./img/setting_git_2.png"></img>
+                <img class="image" src="./img/setting_git_3.png"></img>
+                <p>以下の画像のように、Noteには分かりやすい名前、Expirationは1年後、repoにのみチェックを付けて、[Generate token]を押す</p>
+                <img class="image" src="./img/setting_git_4.png"></img>
+                <p>画面に出てきた ghp_ から始まる文字列をコピーする</p>
+                <p class="annotation">※ghp_から始まる文字列（トークン）はパスワードと同様にアカウントへのアクセスができるものなので、自分以外の人には知られないように！！！</p>
+                <img class="image" src="./img/setting_git_5.png"></img>
+                <p>Windowsのコントロールパネルを開き、[ユーザーアカウント]→[資格情報マネージャー]→[Windows 資格情報]の順に進む</p>
+                <p>[汎用資格情報の追加]を押し、インターネットまたはネットワークのアドレスに git:https://自分のGitHubの名前@github.com、</p>
+                <p>ユーザー名に自分のGitHubの名前、パスワードにghp_から始まる文字列を入力し、OKを押す</p>
+                <img class="image" src="./img/setting_git_6.png"></img>
+            </section>
+        </div>
+    </body>
+</html>
