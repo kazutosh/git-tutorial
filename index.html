@@ -42,8 +42,60 @@
                 <img class="image" src="./img/setting_git_5.png"></img>
                 <p>Windowsのコントロールパネルを開き、[ユーザーアカウント]→[資格情報マネージャー]→[Windows 資格情報]の順に進む</p>
                 <p>[汎用資格情報の追加]を押し、インターネットまたはネットワークのアドレスに git:https://自分のGitHubの名前@github.com、</p>
-                <p>ユーザー名に自分のGitHubの名前、パスワードにghp_から始まる文字列を入力し、OKを押す</p>
+                <p>ユーザー名に自分のGitHubの名前、パスワードにghp_から始まる文字列を入力し、[OK]を押す</p>
                 <img class="image" src="./img/setting_git_6.png"></img>
+            </section>
+            <section class="section">
+                <h1>リポジトリを作り、GitHubと紐づける</h1>
+                <p>まず、コマンドプロンプトを開き、リポジトリを作りたいディレクトリに移動する</p>
+                <p>以下のコマンドを実行し、カレントディレクトリにリポジトリを作る</p>
+                <p class="command">git init</p>
+                <p>次は、GitHubに行き、自分のアカウントにログイン後、[New]を押す</p>
+                <img class="image" src="./img/create_repo_1.png"></img>
+                <p>リポジトリの作成画面に行ったら、Repository nameにはリポジトリの名前、公開設定はPublicかPrivateを設定し、[Create repository]を押す</p>
+                <p class="annotation">公開設定をPublicにすると、リポジトリのファイルなどが他のユーザからも見れるようなります</p>
+                <p class="annotation">他のユーザに見られたくない！！！って人はPrivate推奨です</p>
+                <img class="image" src="./img/create_repo_2.png"></img>
+                <p>GitHubリポジトリのURLをコピーし、以下のコマンドを実行する</p>
+                <p class="command">git branch -M main</p>
+                <p class="command">git remote add origin "GitHubリポジトリのURL"</p>
+                <img class="image" src="./img/create_repo_3.png"></img>
+                <p>これで、PC上のリポジトリとGitHub上のリポジトリを紐づけることができた</p>
+            </section>
+            <section class="section">
+                <h1>リポジトリにファイルを追加し、GitHub上のリポジトリと同期させる</h1>
+                <p>リポジトリにファイルを追加するには、まず、以下のコマンドで追加したいファイルをステージ状態にする</p>
+                <p class="command">git add "ファイル名"</p>
+                <p>そして、以下のコマンドでコミットをすることにより、はじめてリポジトリにファイルが追加される</p>
+                <p class="command">git commit -m "コミットの概要コメント"</p>
+                <p class="annotation">概要コメントはどのような変更をしたのか他の人に伝えるものなので簡潔に書く</p>
+                <p class="annotation">例: 〇〇を追加した。</p>
+                <p class="annotation">例: ××の□□を△△に変更した。</p>
+                <p>そして、以下のコマンドでGitHub上のリポジトリと同期させる</p>
+                <p class="command">git push -u origin master</p>
+                <p class="annotation">ファイルの編集内容の同期も上記と同じ方法でできる</p>
+            </section>
+            <section class="section">
+                <h1>GitHub上のリポジトリをPCにクローンする</h1>
+                <p>以下のコマンドでGitHub上のリポジトリをPC上にクローンする</p>
+                <p class="command">git clone "GitHubリポジトリのURL"</p>
+                <p>実行すると、カレントディレクトリにGitHubリポジトリと同名のディレクトリが作成され、そのディレクトリがリポジトリになっている</p>
+                <p></p>
+            </section>
+            <section class="section">
+                <h1>GitHub上のリポジトリの内容をPC上のリポジトリに取り込む</h1>
+                <p>以下のコマンドでGitHub上の内容を取り込む</p>
+                <p class="command">git pull</p>
+                <p>このコマンドを実行するとGitHub上のリポジトリの内容がPC上のリポジトリに取り込まれる</p>
+            </section>
+            <section class="section">
+                <h1>具体的なコマンドの使い方</h1>
+                <p>例: 家で書いたソースコードの続きを、学校でも書き、さらにその続きを家で書く場合</p>
+                <p>1. 家のPC上にリポジトリを作り、ソースファイルを追加する</p>
+                <p>2. 作ったリポジトリをGitHub上のリポジトリと紐づけ、pushする</p>
+                <p>3. 学校のPC上でGitHub上のリポジトリをcloneする</p>
+                <p>4. 学校のPC上の作業内容をGitHub上のリポジトリにpushする</p>
+                <p>5. 家のPC上のリポジトリでpullをする</p>
             </section>
         </div>
     </body>
